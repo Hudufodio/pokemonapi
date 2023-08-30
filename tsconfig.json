@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "esnext",
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "strictNullChecks": true,
+    "typeRoots": ["types.d.ts"]
+  },
+  "lib": ["ESNext", "dom"],
+  "exclude": ["node_modules"],
+  "include": [".eslintrc.js", "./src/**/*", "src/components/pokemonapi/index.tsx"]
+}
