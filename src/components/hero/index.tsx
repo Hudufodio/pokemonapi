@@ -1,9 +1,12 @@
-function Hero() {
+import Card from '../card';
+import './style.scss';
+
+const Hero = () => {
 	return (
-		<div className="main">
-			<h1>POKEMON INFO</h1>
+		<div className="container">
+			<Card />
 		</div>
 	);
-}
+};
 
 export default Hero;
