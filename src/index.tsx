@@ -1,16 +1,17 @@
 //internal
-import { Hero, Card, PokemonInfo } from './components';
+import { Hero, PokemonInfo } from './components';
 
 //external imports
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import './global.scss';
 
 const Main = () => {
 	return (
 		<>
 			<main>
 				<Hero />
-				<Card />
 				<PokemonInfo />
 			</main>
 		</>

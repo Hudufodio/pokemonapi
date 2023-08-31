@@ -1,9 +1,5 @@
-function PokemonInfo() {
-	return (
-		<div>
-			<h1>POKEMON-INFO</h1>
-		</div>
-	);
-}
+const PokemonInfo = () => {
+	return <></>;
+};
 
 export default PokemonInfo;
