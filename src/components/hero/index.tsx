@@ -1,12 +1,7 @@
-import Card from '../card';
 import './style.scss';
 
 const Hero = () => {
-	return (
-		<div className="container">
-			<Card />
-		</div>
-	);
+	return <div className="container"></div>;
 };
 
 export default Hero;
