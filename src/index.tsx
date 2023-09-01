@@ -1,5 +1,5 @@
 //internal
-import { Hero, PokemonInfo } from './components';
+import { Card, Hero, PokemonInfo } from './components';
 
 //external imports
 import React from 'react';
@@ -11,6 +11,7 @@ const Main = () => {
 	return (
 		<>
 			<main>
+				<Card />
 				<Hero />
 				<PokemonInfo />
 			</main>
