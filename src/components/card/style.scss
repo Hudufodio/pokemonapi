@@ -7,7 +7,7 @@
 
 	.card {
 		display: flex;
-        flex-direction: column;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		width: 280px;
@@ -27,5 +27,17 @@
 		h2 {
 			margin: auto;
 		}
+	}
+
+	.card-back {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 280px;
+		height: 310px;
+		border-radius: 1rem;
+		background-color: #000;
+		box-sizing: border-box;
+		color: #fff;
 	}
 }
