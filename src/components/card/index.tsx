@@ -1,11 +1,7 @@
 import ReactCardFlip from 'react-card-flip';
 import pikachu from '../images/pikachu.png';
 import './style.scss';
-import { ReactNode, useState } from 'react';
-
-type Card = {
-	children: [ReactNode, ReactNode];
-};
+import { useState } from 'react';
 
 const Card = () => {
 	const [isFlipped, setIsFlipped] = useState('');
@@ -18,49 +14,59 @@ const Card = () => {
 						<img src={pikachu} alt="pokemon image pikachu" />
 						<h2>Pikachu</h2>
 					</div>
-				</ReactCardFlip>
-				<ReactCardFlip isFlipped={isFlipped === 'card'} flipDirection="horizontal">
-					<div className="card" onMouseEnter={() => setIsFlipped('card')}>
-						<img src={pikachu} alt="pokemon image pikachu" />
-						<h2>Pikachu</h2>
+					<div className="card-back" onMouseLeave={() => setIsFlipped('')}>
+						<div className="abilities">
+							<div className="group">
+								<h2>static</h2>
+							</div>
+							<div className="group">
+								<h2>lightning-rod</h2>
+							</div>
+						</div>
+						<div className="base-stats">
+							<h3>hp:35</h3>
+							<h3>attack:55</h3>
+							<h3>defence:40</h3>
+							<h3>special attack:50</h3>
+							<h3>speed:90</h3>
+						</div>
 					</div>
 				</ReactCardFlip>
-				<ReactCardFlip isFlipped={isFlipped === 'card'} flipDirection="horizontal">
-					<div className="card" onMouseEnter={() => setIsFlipped('card')}>
-						<img src={pikachu} alt="pokemon image pikachu" />
-						<h2>Pikachu</h2>
-					</div>
-				</ReactCardFlip>
-				<ReactCardFlip isFlipped={isFlipped === 'card'} flipDirection="horizontal">
-					<div className="card" onMouseEnter={() => setIsFlipped('card')}>
-						<img src={pikachu} alt="pokemon image pikachu" />
-						<h2>Pikachu</h2>
-					</div>
-				</ReactCardFlip>
-				<ReactCardFlip isFlipped={isFlipped === 'card'} flipDirection="horizontal">
-					<div className="card" onMouseEnter={() => setIsFlipped('card')}>
-						<img src={pikachu} alt="pokemon image pikachu" />
-						<h2>Pikachu</h2>
-					</div>
-				</ReactCardFlip>
-				<ReactCardFlip isFlipped={isFlipped === 'card'} flipDirection="horizontal">
-					<div className="card" onMouseEnter={() => setIsFlipped('card')}>
-						<img src={pikachu} alt="pokemon image pikachu" />
-						<h2>Pikachu</h2>
-					</div>
-				</ReactCardFlip>
-				<ReactCardFlip isFlipped={isFlipped === 'card'} flipDirection="horizontal">
-					<div className="card" onMouseEnter={() => setIsFlipped('card')}>
-						<img src={pikachu} alt="pokemon image pikachu" />
-						<h2>Pikachu</h2>
-					</div>
-				</ReactCardFlip>
-				<ReactCardFlip isFlipped={isFlipped === 'card'} flipDirection="horizontal">
-					<div className="card" onMouseEnter={() => setIsFlipped('card')}>
-						<img src={pikachu} alt="pokemon image pikachu" />
-						<h2>Pikachu</h2>
-					</div>
-				</ReactCardFlip>
+
+				<div className="card" onMouseEnter={() => setIsFlipped('card')}>
+					<img src={pikachu} alt="pokemon image pikachu" />
+					<h2>Pikachu</h2>
+				</div>
+
+				<div className="card" onMouseEnter={() => setIsFlipped('card')}>
+					<img src={pikachu} alt="pokemon image pikachu" />
+					<h2>Pikachu</h2>
+				</div>
+
+				<div className="card" onMouseEnter={() => setIsFlipped('card')}>
+					<img src={pikachu} alt="pokemon image pikachu" />
+					<h2>Pikachu</h2>
+				</div>
+
+				<div className="card" onMouseEnter={() => setIsFlipped('card')}>
+					<img src={pikachu} alt="pokemon image pikachu" />
+					<h2>Pikachu</h2>
+				</div>
+
+				<div className="card" onMouseEnter={() => setIsFlipped('card')}>
+					<img src={pikachu} alt="pokemon image pikachu" />
+					<h2>Pikachu</h2>
+				</div>
+
+				<div className="card" onMouseEnter={() => setIsFlipped('card')}>
+					<img src={pikachu} alt="pokemon image pikachu" />
+					<h2>Pikachu</h2>
+				</div>
+
+				<div className="card" onMouseEnter={() => setIsFlipped('card')}>
+					<img src={pikachu} alt="pokemon image pikachu" />
+					<h2>Pikachu</h2>
+				</div>
 			</div>
 		</>
 	);
