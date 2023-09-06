@@ -12,5 +12,5 @@
   },
   "lib": ["ESNext", "dom"],
   "exclude": ["node_modules"],
-  "include": [".eslintrc.js", "./src/**/*", "src/components/pokemonapi/index.tsx"]
+  "include": [".eslintrc.js", "./src/**/*", "src/components/pokemonInfo/index.tsx"]
 }

@@ -2,6 +2,15 @@ import ReactCardFlip from 'react-card-flip';
 import pikachu from '../images/pikachu.png';
 import './style.scss';
 import { useState } from 'react';
+// import PokemonInfo from '../pokemonInfo';
+
+// type Card = {
+// 	PokemonInfo: any;
+// };
+
+// interface Card {
+// 	PokemonInfo: string;
+// }
 
 const Card = () => {
 	const [isFlipped, setIsFlipped] = useState('');
