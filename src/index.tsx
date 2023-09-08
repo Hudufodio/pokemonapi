@@ -11,9 +11,9 @@ const Main = () => {
 	return (
 		<>
 			<main>
+				<PokemonInfo />
 				<Card />
 				<Hero />
-				<PokemonInfo />
 			</main>
 		</>
 	);
