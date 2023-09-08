@@ -1,6 +1,6 @@
 import './style.scss';
-// import { useEffect, useState } from 'react';
-// import axios from 'axios';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 type PokemonInfo = {
 	json: string;
@@ -9,19 +9,35 @@ type PokemonInfo = {
 };
 
 const PokemonInfo = () => {
-	// const [pokeData, setPokeData] = useState([]);
-	// const [loading, setLoading] = useState('true');
-	// const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon/');
+	const [pokeData, setPokeData] = useState([]);
+	const [loading, setLoading] = useState('true');
+	const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon/');
+	const [nextUrl, setNextUrl] = useState();
+	const [previousUrl, setPreviousUrl] = useState();
 
-	// const Pokefun = async () => {
-	// 	setLoading('true');
-	// 	const res = await axios.get(url);
-	// 	console.log(res.data);
-	// };
+	const Pokefun = async () => {
+		setLoading('true');
+		const res = await axios.get(url);
+		console.log(res.data.results);
+		setNextUrl(res.data.next);
+		setPreviousUrl(res.data.previous);
+		getPokemon(res.data.results);
+		setLoading('false');
+	};
 
-	// useEffect(() => {
-	// 	Pokefun();
-	// }, [url]);
+	const getPokemon = async(res: any) => {
+		res.map(async(item: any) => {
+			const result = await axios.get(item.url);
+			setPokeData(state) => {
+				state = [...state, result.data];
+				return state;
+			}
+		})
+	}
+
+	useEffect(() => {
+		Pokefun();
+	}, [url]);
 
 	// //API fetch
 	// const Pokeapi = async () => {
