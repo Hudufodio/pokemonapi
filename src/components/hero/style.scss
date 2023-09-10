@@ -1,1 +1,9 @@
+.left,
+.right {
+	flex-basis: 50%;
+}
 
+.left {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+}
