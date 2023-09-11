@@ -5,7 +5,6 @@ const Card = () => {
 	return (
 		<>
 			<div className="card">
-				<h2>1</h2>
 				<img src={pikachu} alt="" />
 				<h2>Pikachu</h2>
 			</div>
