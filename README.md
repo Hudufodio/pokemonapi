@@ -1,1 +1,1 @@
-# Pokemon API to built with typescript using fetch instead of axios.
+# Pokemon API to be built using typescript with fetch API instead of axios.
