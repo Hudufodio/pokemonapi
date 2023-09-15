@@ -32,7 +32,7 @@ const Card = () => {
 					</div>
 				</div>
 			</ReactCardFlip>
-			<ReactCardFlip isFlipped={isFlipped === 'card2'} flipDirection="horizontal">
+			{/* <ReactCardFlip isFlipped={isFlipped === 'card2'} flipDirection="horizontal">
 				<div className="card" onMouseEnter={() => setIsFlipped('card2')}>
 					<img src={pikachu} alt="" />
 					<h1>Pikachu</h1>
@@ -151,7 +151,7 @@ const Card = () => {
 						<h3>speed: 90</h3>
 					</div>
 				</div>
-			</ReactCardFlip>
+			</ReactCardFlip> */}
 			<div className="btns">
 				<button>Previous</button>
 				<button>Next</button>
