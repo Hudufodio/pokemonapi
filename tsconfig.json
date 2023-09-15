@@ -1,16 +1,17 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ES6",
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
     "strict": true,
     "strictNullChecks": true,
-    "typeRoots": ["types.d.ts"]
+    "typeRoots": ["types.d.ts"],
+    "noUnusedLocals": false
   },
-  "lib": ["ESNext", "dom"],
+  "lib": ["es6", "dom", "scripthost"],
   "exclude": ["node_modules"],
   "include": [".eslintrc.js", "./src/**/*", "src/components/pokemonInfo/index.tsx"]
 }
