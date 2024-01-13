@@ -2,10 +2,6 @@ import { useState, useEffect } from 'react';
 import './style.scss';
 import axios from 'axios';
 
-// type Hero = {
-// 	data: string;
-// };
-
 const Hero = () => {
 	const [pokeData, setPokeData] = useState<any[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +9,6 @@ const Hero = () => {
 	const [nextUrl, setNextUrl] = useState();
 	const [previousUrl, setPreviousUrl] = useState();
 
-	//acces the API endpoint
 	const url = 'https://pokeapi.co/api/v2/pokemon/?_limit=6';
 
 	const getPokemon = async (res: any) => {
