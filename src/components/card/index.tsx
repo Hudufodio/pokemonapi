@@ -3,7 +3,7 @@ import ReactCardFlip from 'react-card-flip';
 import { useState } from 'react';
 
 //internal imports
-import './style.scss';
+import './styles.scss';
 
 const Card = () => {
 	const [isFlipped, setIsFlipped] = useState('');
