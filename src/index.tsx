@@ -1,20 +1,10 @@
-//external imports
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 //internal
-import { Card, Hero } from './components';
+import App from './App';
 
 import './global.scss';
-
-const App = () => {
-	return (
-		<div>
-			<Card />
-			<Hero />
-		</div>
-	);
-};
 
 const div = document.getElementById('root');
 if (div) {
