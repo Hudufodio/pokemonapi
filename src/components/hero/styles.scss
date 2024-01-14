@@ -1,0 +1,24 @@
+.searchContainer {
+	position: fixed;
+	top: 0;
+	margin: auto;
+	width: 100%;
+	padding: 10px;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+
+	.searchInput {
+		width: 600px;
+		padding: 8px;
+		margin: auto;
+		text-align: center;
+		border-radius: 20px;
+		border: 1px solid #ccc;
+
+		&:focus {
+			border-radius: 2px solid blue;
+			outline: none;
+		}
+	}
+}

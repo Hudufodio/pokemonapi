@@ -1,10 +1,11 @@
-.card-container {
+.cardContainer {
 	max-width: 100%;
 	max-height: 80%;
 	display: grid;
 	grid-template-columns: repeat(3, 2fr);
 	gap: 50px;
 	margin: auto;
+	margin-top: 70px;
 
 	.card {
 		display: flex;
@@ -27,7 +28,7 @@
 		}
 	}
 
-	.card-back {
+	.cardBack {
 		display: flex;
 		flex-direction: column;
 		width: 280px;
