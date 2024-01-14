@@ -1,19 +1,23 @@
-import './style.scss';
 import pikachu from '../images/pikachu.png';
 import ReactCardFlip from 'react-card-flip';
 import { useState } from 'react';
 
+//internal imports
+import './style.scss';
+
 const Card = () => {
 	const [isFlipped, setIsFlipped] = useState('');
 
+	//const url = 'https://pokeapi.co/api/v2/pokemon/?_limit=6';
+
 	return (
-		<div className="card-container">
+		<div className="cardContainer">
 			<ReactCardFlip isFlipped={isFlipped === 'card1'} flipDirection="horizontal">
 				<div className="card" onMouseEnter={() => setIsFlipped('card1')}>
 					<img src={pikachu} alt="" />
 					<h1>Pikachu</h1>
 				</div>
-				<div className="card-back" onMouseLeave={() => setIsFlipped('')}>
+				<div className="cardBack" onMouseLeave={() => setIsFlipped('')}>
 					<div className="abilities">
 						<div className="group">
 							<h2>static</h2>

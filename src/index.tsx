@@ -1,21 +1,18 @@
-//internal
-import { Card, Hero, PokemonInfo } from './components';
-
 //external imports
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+//internal
+import { Card, Hero } from './components';
+
 import './global.scss';
 
-const Main = () => {
+const App = () => {
 	return (
-		<>
-			<main>
-				<PokemonInfo />
-				<Card />
-				<Hero />
-			</main>
-		</>
+		<div>
+			<Card />
+			<Hero />
+		</div>
 	);
 };
 
@@ -25,7 +22,7 @@ if (div) {
 
 	root.render(
 		<React.StrictMode>
-			<Main />
+			<App />
 		</React.StrictMode>
 	);
 }
