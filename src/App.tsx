@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Navbar, Hero, Card, About } from './components';
+import { Navbar, Search, About, Home } from './components';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();
@@ -9,9 +9,9 @@ const App = () => {
 		<BrowserRouter>
 			<QueryClientProvider client={queryClient}>
 				<Navbar />
-				<Card />
-				<Hero />
+				<Search />
 				<Routes>
+					<Route path="/card" Component={Home} />
 					<Route path="/about" Component={About} />
 				</Routes>
 			</QueryClientProvider>

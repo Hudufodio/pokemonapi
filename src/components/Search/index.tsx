@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import './styles.scss';
 
-const Hero = () => {
+const Search = () => {
 	const [search, setSearch] = useState('');
 
 	const handleSearch = (e: any) => {
@@ -22,4 +22,4 @@ const Hero = () => {
 	);
 };
 
-export default Hero;
+export default Search;
