@@ -11,7 +11,7 @@ const App = () => {
 				<Navbar />
 				<Search />
 				<Routes>
-					<Route path="/card" Component={Home} />
+					<Route path="/" Component={Home} />
 					<Route path="/about" Component={About} />
 				</Routes>
 			</QueryClientProvider>
