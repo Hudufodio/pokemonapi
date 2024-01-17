@@ -1,17 +1,15 @@
 .cardContainer {
-	max-width: 100%;
-	max-height: 80%;
 	display: grid;
-	grid-template-columns: repeat(3, 2fr);
-	gap: 50px;
-	margin: auto;
+	grid-template-columns: repeat(4, 2fr);
+	gap: 20px;
 	margin-top: 70px;
 
 	.card {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 280px;
+		width: 260px;
+		height: 300px;
 		background-color: #9edef9;
 		border-radius: 1rem;
 		box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
@@ -20,49 +18,41 @@
 
 		img {
 			width: 180px;
+			margin: auto;
 		}
 
 		h1 {
-			font-weight: bold;
 			text-transform: uppercase;
+			font-size: 22px;
 		}
 	}
 
 	.cardBack {
 		display: flex;
 		flex-direction: column;
-		width: 280px;
+		width: 260px;
+		height: 300px;
 		align-items: center;
 		color: #fff;
 		border-radius: 1rem;
 		border: 2px solid #9edef9;
-		background-color: #000;
 
 		.abilities {
 			display: flex;
 			flex-direction: row;
-			padding: 5px 10px;
-			font-size: 10px;
-			width: fit-content;
-			height: 30px;
-			background-color: red;
-			margin-top: 1px;
-			border-radius: 1rem;
 
 			.group {
-				margin: 0 30px;
-				background: #9edef9;
-				border-radius: 10px;
+				padding: 5px;
 
 				h2 {
-					color: #000;
-					font-weight: 500;
+					font-size: 20px;
+					font-weight: bold;
 				}
 			}
 		}
 
 		.stats {
-			font-size: 15px;
+			font-size: 13px;
 		}
 	}
 }
