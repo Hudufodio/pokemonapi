@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import pikachu from '../images/pikachu.png';
 import ReactCardFlip from 'react-card-flip';
 import { useState } from 'react';
@@ -8,7 +9,30 @@ import './styles.scss';
 const Card = () => {
 	const [isFlipped, setIsFlipped] = useState('');
 
-	//const url = 'https://pokeapi.co/api/v2/pokemon/?_limit=6';
+	const url = 'https://pokeapi.co/api/v2/pokemon/';
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch(url);
+
+				if (!response.ok) {
+					throw new Error(`HTTP error! Status: ${response.status}`);
+				}
+
+				const data = await response.json();
+				console.log(data);
+			} catch (error) {
+				let errorMessage = 'failed to fetch data';
+				if (error instanceof Error) {
+					errorMessage = error.message;
+				}
+				console.log(errorMessage);
+			}
+		};
+
+		fetchData();
+	}, []);
 
 	return (
 		<div className="cardContainer">
