@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import pikachu from '../images/pikachu.png';
 import ReactCardFlip from 'react-card-flip';
-import { useState } from 'react';
 
 //internal imports
 import './styles.scss';
 
 const Card = () => {
 	const [isFlipped, setIsFlipped] = useState('');
+	const [data, setData] = useState(null);
 
 	const url = 'https://pokeapi.co/api/v2/pokemon/';
 
@@ -16,25 +16,19 @@ const Card = () => {
 			try {
 				const response = await fetch(url);
 
-				if (!response.ok) {
-					throw new Error(`HTTP error! Status: ${response.status}`);
-				}
-
-				const data = await response.json();
-				console.log(data);
+				const result = await response.json();
+				setData(result);
+				console.log(result);
 			} catch (error) {
-				let errorMessage = 'failed to fetch data';
-				if (error instanceof Error) {
-					errorMessage = error.message;
-				}
-				console.log(errorMessage);
+				const errorMessage = (error as Error).message;
+				console.error(errorMessage);
 			}
 		};
 
 		fetchData();
 	}, []);
 
-	return (
+	return data ? (
 		<div className="cardContainer">
 			<ReactCardFlip isFlipped={isFlipped === 'card1'} flipDirection="horizontal">
 				<div className="card" onMouseEnter={() => setIsFlipped('card1')}>
@@ -50,6 +44,7 @@ const Card = () => {
 							<h2>lighting-rod</h2>
 						</div>
 					</div>
+					<hr style={{ width: '100%', marginTop: -18 }} />
 					<div className="stats">
 						<h3>hp: 35</h3>
 						<h3>attack: 55</h3>
@@ -61,6 +56,8 @@ const Card = () => {
 				</div>
 			</ReactCardFlip>
 		</div>
+	) : (
+		<p>loading . . .</p>
 	);
 };
 export default Card;
