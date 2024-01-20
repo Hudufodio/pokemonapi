@@ -1,10 +1,14 @@
 import Card from '../Card';
 import './styles.scss';
 
-const Home = () => {
+// type Props = {
+// 	data?: string;
+// };
+
+const Home = ({ data, loading }: any) => {
 	return (
 		<div className="containerHome">
-			<Card />
+			<Card data={data} loading={loading} />
 		</div>
 	);
 };
