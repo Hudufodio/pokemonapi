@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Card from '../Card';
 import './styles.scss';
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, Grid } from '@mui/material';
 
 const Home = () => {
 	const [data, setData] = useState([]);
@@ -31,7 +31,11 @@ const Home = () => {
 		<CircularProgress />
 	) : (
 		<div className="containerHome">
-			<Card results={results} />
+			{results?.map((result: any) => (
+				<Grid key={result.id}>
+					<Card results={results} />
+				</Grid>
+			))}
 		</div>
 	);
 };

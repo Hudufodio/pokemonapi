@@ -17,6 +17,7 @@ const Search = () => {
 				value={search}
 				onChange={handleSearch}
 				className="searchInput"
+				autoFocus
 			/>
 		</div>
 	);
