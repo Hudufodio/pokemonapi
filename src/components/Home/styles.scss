@@ -1,7 +1,10 @@
 .containerHome {
 	width: 100%;
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(4, 5fr);
+	gap: 20px;
 	justify-content: center;
 	position: relative;
 	top: 20px;
+	align-items: center;
 }
