@@ -47,11 +47,11 @@ const Home = () => {
 		<>
 			<div className="containerHome">
 				<Card data={data} loading={loading} />
+				<section className="btns">
+					<button>Prev.</button>
+					<button>Next</button>
+				</section>
 			</div>
-			<section className="btns">
-				<button>Prev.</button>
-				<button>Next</button>
-			</section>
 		</>
 	);
 };
