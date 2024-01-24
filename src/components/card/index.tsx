@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import pikachu from '../images/pikachu.png';
+// import pikachu from '../images/pikachu.png';
 import ReactCardFlip from 'react-card-flip';
 import { CircularProgress } from '@mui/material';
 
@@ -18,9 +18,9 @@ const Card = ({ data, loading }: any) => {
 				data.map((item: any) => {
 					return (
 						<>
-							<div className="cardContainer">
-								<ReactCardFlip isFlipped={isFlipped === 'card1'} flipDirection="horizontal">
-									<div className="card" onMouseEnter={() => setIsFlipped('card1')}>
+							<div className="cardContainer" key={item.id}>
+								<ReactCardFlip isFlipped={isFlipped === item.id} flipDirection="horizontal">
+									<div className="card" onMouseEnter={() => setIsFlipped(item.id)}>
 										<img src={item.sprites.front_default} alt="" />
 										<h1>{item.name}</h1>
 									</div>
