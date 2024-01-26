@@ -10,6 +10,7 @@ const Home = () => {
 	const [prevUrl, setPrevUrl] = useState();
 	const [nextUrl, setNextUrl] = useState();
 	const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon/');
+	// const [pokeDetail, setPokeDetail] = useState();
 
 	// const { results }: any = data;
 
