@@ -26,13 +26,9 @@ const Card = ({ data, loading }: any) => {
 									</div>
 									<div className="cardBack" onMouseLeave={() => setIsFlipped('')}>
 										<div className="abilities">
-											{data?.abilities?.map((item: any) => {
-												return (
-													<div className="group" key={item.id}>
-														<h2>{item.ability.name}</h2>
-													</div>
-												);
-											})}
+											<div className="group" key={item.id}>
+												<h2>{item?.abilities?.name}</h2>
+											</div>
 										</div>
 										<hr style={{ width: '100%', marginTop: -18 }} />
 										<div className="stats">

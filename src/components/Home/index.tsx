@@ -10,9 +10,6 @@ const Home = () => {
 	const [prevUrl, setPrevUrl] = useState();
 	const [nextUrl, setNextUrl] = useState();
 	const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon/');
-	// const [pokeDetail, setPokeDetail] = useState();
-
-	// const { results }: any = data;
 
 	const fetchData = async () => {
 		try {
@@ -22,7 +19,6 @@ const Home = () => {
 			setPrevUrl(res.data?.previous);
 			getPokemon(res.data.results);
 			setLoading(false);
-			// console.log(data);
 		} catch (error) {
 			const errorMessage = (error as Error).message;
 			console.error(errorMessage);
@@ -32,7 +28,6 @@ const Home = () => {
 	const getPokemon: (getPokemon: any) => void = async (res: any) => {
 		res.map(async (item: any) => {
 			const result = await axios.get(item.url);
-			// console.log(result.data);
 			setData((state: any) => {
 				state = [...state, result.data];
 				return state;
