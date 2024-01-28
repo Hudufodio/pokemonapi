@@ -7,7 +7,6 @@ import { CircularProgress } from '@mui/material';
 import './styles.scss';
 
 const Card = ({ data, loading }: any) => {
-	console.log(data);
 	const [isFlipped, setIsFlipped] = useState('');
 
 	return (
@@ -26,13 +25,12 @@ const Card = ({ data, loading }: any) => {
 									</div>
 									<div className="cardBack" onMouseLeave={() => setIsFlipped('')}>
 										<div className="abilities">
-											{data?.abilities?.map((item: any) => {
-												return (
-													<div className="group" key={item.id}>
-														<h2>{item.ability.name}</h2>
-													</div>
-												);
-											})}
+											<div className="group">
+												<h2>Static</h2>
+											</div>
+											<div className="group">
+												<h2>Growth</h2>
+											</div>
 										</div>
 										<hr style={{ width: '100%', marginTop: -18 }} />
 										<div className="stats">
