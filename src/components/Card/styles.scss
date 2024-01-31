@@ -32,24 +32,5 @@
 		align-items: center;
 		border-radius: 1rem;
 		background-color: var(--secondary);
-
-		.abilities {
-			display: flex;
-			flex-direction: row;
-
-			.group {
-				padding: 5px;
-
-				h2 {
-					font-size: 20px;
-					font-weight: bold;
-				}
-			}
-		}
-
-		.stats {
-			font-size: 14px;
-			margin-top: -14px;
-		}
 	}
 }
