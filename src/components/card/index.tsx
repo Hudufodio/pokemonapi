@@ -25,7 +25,7 @@ const Card = ({ data, loading }: any) => {
 										<h1>{item.name}</h1>
 									</div>
 									<div className="cardBack" onMouseLeave={() => setIsFlipped('')}>
-										<PokeInfo data={data} />
+										<PokeInfo />
 									</div>
 								</ReactCardFlip>
 							</div>
