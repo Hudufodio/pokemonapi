@@ -10,6 +10,12 @@ interface PokemonHomeProps {
 	results: any;
 }
 
+export const getPokemon = async (name: any) => {
+	const response = await fetch(POKEMON_API + 'pokemon/' + name);
+	const data = await response.json();
+	return data;
+};
+
 const Home = () => {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -25,16 +31,9 @@ const Home = () => {
 		}
 	};
 
-	const getPokemon = async (name: any) => {
-		const response = await fetch(POKEMON_API + 'pokemon/' + name);
-		const data = await response.json();
-		return data;
-	};
-
 	useEffect(() => {
 		PokemonData();
 	}, []);
-	// console.log(data);
 
 	return (
 		<>

@@ -13,7 +13,7 @@ const Search = () => {
 		<div className="searchContainer">
 			<input
 				type="text"
-				placeholder="search your favorite character"
+				placeholder="search your favorite character Pikachu, Mew etc"
 				value={search}
 				onChange={handleSearch}
 				className="searchInput"
