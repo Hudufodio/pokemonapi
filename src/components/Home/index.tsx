@@ -1,52 +1,44 @@
-import { useState, useEffect } from 'react';
-import Card from '../Card';
+import { useEffect, useState } from 'react';
 import './styles.scss';
+import PokemonCard from '../PokemonCard';
 
-import axios from 'axios';
+const POKEMON_API = 'https://pokeapi.co/api/v2/';
+
+interface PokemonHomeProps {
+	pokemon: any;
+	name: string;
+	results: any;
+}
+
+export const getPokemon = async (name: any) => {
+	const response = await fetch(POKEMON_API + 'pokemon/' + name);
+	const data = await response.json();
+	return data;
+};
 
 const Home = () => {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const [prevUrl, setPrevUrl] = useState();
-	const [nextUrl, setNextUrl] = useState();
-	const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon/');
 
-	const fetchData = async () => {
+	const PokemonData = async () => {
 		try {
-			setLoading(true);
-			const res = await axios.get(url);
-			setNextUrl(res.data?.next);
-			setPrevUrl(res.data?.previous);
-			getPokemon(res.data.results);
+			const response = await fetch(POKEMON_API + 'pokemon?limit=151&offset=0');
+			const data = await response.json();
+			setData(data.results);
 			setLoading(false);
 		} catch (error) {
-			const errorMessage = (error as Error).message;
-			console.error(errorMessage);
+			console.error('Error fetching data:', error);
 		}
 	};
 
-	const getPokemon: (getPokemon: any) => void = async (res: any) => {
-		res.map(async (item: any) => {
-			const result = await axios.get(item.url);
-			setData((state: any) => {
-				state = [...state, result.data];
-				return state;
-			});
-		});
-	};
-
 	useEffect(() => {
-		fetchData();
-	}, [url]);
+		PokemonData();
+	}, []);
 
 	return (
 		<>
 			<div className="containerHome">
-				<Card data={data} loading={loading} />
-				<section className="btns">
-					<button>Prev.</button>
-					<button>Next</button>
-				</section>
+				<PokemonCard name={data} loading={loading} />;
 			</div>
 		</>
 	);
