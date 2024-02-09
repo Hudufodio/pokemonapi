@@ -1,5 +1,6 @@
 import pikachu from '../images/pikachu.png';
 import { CircularProgress } from '@mui/material';
+import { getPokemon } from '../Home';
 
 //internal imports
 import './styles.scss';
@@ -7,25 +8,28 @@ import './styles.scss';
 interface PokemonCardProps {
 	name: any;
 	loading: any;
+	params: any;
 }
 
-const PokemonCard = ({ name, loading }: PokemonCardProps) => {
+const PokemonCard = ({ pokemonObject }: any) => {
+	console.log(pokemonObject);
 	return (
 		<>
-			{' '}
-			{loading ? (
-				<CircularProgress />
-			) : (
-				name.map((pokemon: any) => {
-					return (
-						<div className="cardContainer" key={pokemon.id}>
-							<div className="card">
+			{pokemonObject?.length > 0 ? (
+				<div className="cardContainer">
+					{pokemonObject.map((pokemon: any) => {
+						return (
+							<div className="card" key={pokemon.id}>
 								<img src={pikachu} alt="" />
 								<h1>{pokemon.name}</h1>
 							</div>
-						</div>
-					);
-				})
+						);
+					})}
+				</div>
+			) : (
+				<div>
+					<CircularProgress />
+				</div>
 			)}
 		</>
 	);
