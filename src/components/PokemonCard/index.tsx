@@ -1,6 +1,6 @@
 import pikachu from '../images/pikachu.png';
 import { CircularProgress } from '@mui/material';
-import { getPokemon } from '../Home';
+// import { getPokemon } from '../Home';
 
 //internal imports
 import './styles.scss';
@@ -12,7 +12,7 @@ interface PokemonCardProps {
 }
 
 const PokemonCard = ({ pokemonObject }: any) => {
-	console.log(pokemonObject);
+	// console.log(pokemonObject);
 	return (
 		<>
 			{pokemonObject?.length > 0 ? (

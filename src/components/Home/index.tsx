@@ -4,23 +4,6 @@ import PokemonCard from '../PokemonCard';
 
 const POKEMON_API = 'https://pokeapi.co/api/v2/';
 
-// interface PokemonHomeProps {
-// 	pokemon: any;
-// 	name: string;
-// 	results: any;
-// }
-
-// const pokeObject = {
-// 	name: 'bulbasaur',
-// 	url: 'https://pokeapi.co/api/v2/pokemon/1/',
-// };
-
-export const getPokemon = async (name: any) => {
-	const response = await fetch(POKEMON_API + 'pokemon/' + name);
-	const data = await response.json();
-	return data;
-};
-
 const Home = () => {
 	const [data, setData] = useState([]);
 
@@ -33,6 +16,12 @@ const Home = () => {
 		} catch (error) {
 			console.error('Error fetching data:', error);
 		}
+	};
+
+	const getPokemon = async (name: any) => {
+		const response = await fetch(POKEMON_API + 'pokemon/' + name);
+		const data = await response.json();
+		return data;
 	};
 
 	useEffect(() => {
