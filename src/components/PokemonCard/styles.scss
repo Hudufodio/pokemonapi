@@ -1,5 +1,8 @@
 .cardContainer {
-	margin-top: 50px;
+	margin-top: 80px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
 
 	.card {
 		display: flex;
@@ -19,18 +22,17 @@
 		}
 
 		h1 {
-			text-transform: uppercase;
 			font-size: 22px;
 		}
 	}
 
-	.cardBack {
-		display: flex;
-		flex-direction: column;
-		width: 220px;
-		height: 275px;
-		align-items: center;
-		border-radius: 1rem;
-		background-color: var(--secondary);
-	}
+	// .cardBack {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	width: 220px;
+	// 	height: 275px;
+	// 	align-items: center;
+	// 	border-radius: 1rem;
+	// 	background-color: var(--secondary);
+	// }
 }
