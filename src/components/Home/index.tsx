@@ -1,38 +1,34 @@
 import { useEffect, useState } from 'react';
 import './styles.scss';
 import PokemonCard from '../PokemonCard';
+import axios from 'axios';
+import { CircularProgress, Pagination } from '@mui/material';
 
-const POKEMON_API = 'https://pokeapi.co/api/v2/';
+const POKEMON_API = 'https://pokeapi.co/api/v2/pokemon/';
 
 const Home = () => {
-	const [data, setData] = useState([]);
+	const [pokemon, setPokemon] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [currentPage, setCurrentPage] = useState(POKEMON_API);
+	const [nextPage, setNextPage] = useState();
+	const [prevPage, setPrevPage] = useState();
 
-	const PokemonData = async () => {
-		try {
-			const response = await fetch(POKEMON_API + 'pokemon?limit=151&offset=0');
-			const data = await response.json();
-			setData(data.results);
-			// console.log(data.results);
-		} catch (error) {
-			console.error('Error fetching data:', error);
-		}
-	};
-
-	const getPokemon = async (name: any) => {
-		const response = await fetch(POKEMON_API + 'pokemon/' + name);
-		const data = await response.json();
-		return data;
-	};
+	const PokemonData = () =>
+		axios.get(currentPage).then((res): any => {
+			setLoading(false);
+			res.data.results;
+			setPokemon(res.data.results);
+			setNextPage(res.data.next);
+			setPrevPage(res.data.previous);
+		});
 
 	useEffect(() => {
 		PokemonData();
-	}, []);
+	}, [currentPage]);
 
 	return (
 		<>
-			<div className="containerHome">
-				<PokemonCard pokemonObject={data} />
-			</div>
+			{loading ? <CircularProgress /> : <PokemonCard pokemon={pokemon} />} <Pagination />
 		</>
 	);
 };
