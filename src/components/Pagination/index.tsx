@@ -1,8 +1,8 @@
-import React from 'react';
+import './styles.scss';
 
-const Pagination = ({ nextPageBtn, prevPageBtn }: any) => {
+const Pagination = () => {
 	return (
-		<div>
+		<div className="containerBtn">
 			<button>Next</button>
 			<button>Prev</button>
 		</div>

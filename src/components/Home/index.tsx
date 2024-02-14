@@ -2,34 +2,34 @@ import { useEffect, useState } from 'react';
 import './styles.scss';
 import PokemonCard from '../PokemonCard';
 import axios from 'axios';
-import { CircularProgress, Pagination } from '@mui/material';
+// import { CircularProgress } from '@mui/material';
 
-const POKEMON_API = 'https://pokeapi.co/api/v2/pokemon/';
+const api = 'https://pokeapi.co/api/v2/pokemon/';
 
 const Home = () => {
-	const [pokemon, setPokemon] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [currentPage, setCurrentPage] = useState(POKEMON_API);
-	const [nextPage, setNextPage] = useState();
-	const [prevPage, setPrevPage] = useState();
+	const [pokemonList, setPokemonList] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
 
-	const PokemonData = () =>
-		axios.get(currentPage).then((res): any => {
-			setLoading(false);
-			res.data.results;
-			setPokemon(res.data.results);
-			setNextPage(res.data.next);
-			setPrevPage(res.data.previous);
-		});
+	const PokemonData = async () => {
+		try {
+			const response = await axios.get(api);
+			setPokemonList(response.data.results);
+			setIsLoading(false);
+		} catch (error) {
+			console.error('Error message:', error);
+		}
+	};
 
 	useEffect(() => {
 		PokemonData();
-	}, [currentPage]);
+	}, []);
 
 	return (
-		<>
-			{loading ? <CircularProgress /> : <PokemonCard pokemon={pokemon} />} <Pagination />
-		</>
+		<div className="pokemonList">
+			{pokemonList?.map((pokemon: any) => (
+				<PokemonCard key={pokemon.id} name={pokemon.name} />
+			))}
+		</div>
 	);
 };
 
