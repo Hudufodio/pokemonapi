@@ -4,29 +4,24 @@ import { CircularProgress } from '@mui/material';
 //internal imports
 import './styles.scss';
 
-interface PokemonCardProps {
-	name: any;
-	loading: any;
-}
-
-const PokemonCard = ({ name, loading }: PokemonCardProps) => {
+const PokemonCard = ({ pokemon }: any) => {
+	console.log(pokemon);
 	return (
 		<>
-			{' '}
-			{loading ? (
-				<CircularProgress />
-			) : (
-				name.map((pokemon: any) => {
-					return (
-						<div className="cardContainer" key={pokemon.id}>
-							<div className="card">
-								<img src={pikachu} alt="" />
-								<h1>{pokemon.name}</h1>
-							</div>
+			<div className="cardContainer">
+				{pokemon ? (
+					pokemon.map((item: any) => (
+						<div className="card" key={pokemon.id}>
+							<h1>{item.name}</h1>
+							<img src={pikachu} alt="" />
 						</div>
-					);
-				})
-			)}
+					))
+				) : (
+					<>
+						<CircularProgress />
+					</>
+				)}
+			</div>
 		</>
 	);
 };
