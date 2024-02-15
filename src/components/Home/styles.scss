@@ -1,5 +1,12 @@
-.pokemonList {
+.main {
 	display: flex;
 	justify-content: center;
-	width: 100%;
+
+	.pokemonList {
+		margin-top: 100px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		justify-items: center;
+		gap: 20px;
+	}
 }
