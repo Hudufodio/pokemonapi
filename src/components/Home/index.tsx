@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { CircularProgress } from '@mui/material';
 
 //internal imports
 import PokemonCard from '../PokemonCard';
 import './styles.scss';
-// import Search from '../Search';
 
 const api = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
 
@@ -69,11 +69,15 @@ function Home({}: HomeProps) {
 				/>
 			</div>
 			<div className="pokemonList">
-				{filteredPokemonList.map((pokemon: any) => (
-					<div key={pokemon.id}>
-						<PokemonCard pokemon={pokemon} isLoading={isLoading} />
-					</div>
-				))}
+				{isLoading ? (
+					<CircularProgress />
+				) : (
+					filteredPokemonList.map((pokemon: any) => (
+						<div key={pokemon.id}>
+							<PokemonCard pokemon={pokemon} />
+						</div>
+					))
+				)}
 			</div>
 		</div>
 	);
