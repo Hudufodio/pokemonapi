@@ -8,7 +8,12 @@ import Search from '../Search';
 
 const api = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
 
-function Home() {
+interface HomeProps {
+	pokemonList: any;
+	isLoading: boolean;
+}
+
+function Home({}: HomeProps) {
 	const [pokemonList, setPokemonList] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
@@ -40,7 +45,7 @@ function Home() {
 
 	return (
 		<div className="main">
-			<Search />
+			<Search search={''} />
 			<div className="pokemonList">
 				{pokemonList.map((pokemon: any) => (
 					<div key={pokemon.id}>

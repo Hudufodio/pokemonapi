@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom';
-
 import './styles.scss';
 
-const Navbar = () => {
+interface NavbarProps {
+	Home: string;
+}
+
+const Navbar = ({}: NavbarProps) => {
 	const handleClick = () => {
 		window.scrollTo(0, 0);
 	};

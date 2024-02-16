@@ -3,7 +3,11 @@ import { useState } from 'react';
 //internal imports
 import './styles.scss';
 
-const Search = () => {
+interface SearchProps {
+	search: string;
+}
+
+const Search = ({}: SearchProps) => {
 	const [searchText, setSearchText] = useState('');
 
 	const handleSearch = (e: any) => {
