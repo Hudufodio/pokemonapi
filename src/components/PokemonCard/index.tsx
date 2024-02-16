@@ -26,18 +26,24 @@ const PokemonCard = ({ pokemon, isLoading }: any) => {
 				</div>
 				<div className="cardBack" onMouseLeave={onMouseLeave}>
 					<div className="abilities">
-						<div className="group">
-							<h2>static</h2>
-						</div>
+						{pokemon.abilities.map((poke: any, id: any) => {
+							const poke_ability = poke.ability.name;
+							return (
+								<div className="group" key={id}>
+									<h2>{poke_ability}</h2>
+								</div>
+							);
+						})}
 					</div>
 					<hr style={{ width: '100%', marginTop: -18 }} />
 					<div className="stats">
-						<h3>hp: 35</h3>
-						<h3>attack: 55</h3>
-						<h3>defense: 40</h3>
-						<h3>special-attack: 50</h3>
-						<h3>special-defense: 50</h3>
-						<h3>speed: 90</h3>
+						{pokemon.stats.map((poke: any, id: any) => {
+							return (
+								<h3 key={id}>
+									{poke.stat.name}:{poke.base_stat}
+								</h3>
+							);
+						})}
 					</div>
 				</div>
 			</ReactCardFlip>
