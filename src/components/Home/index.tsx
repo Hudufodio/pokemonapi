@@ -4,6 +4,7 @@ import axios from 'axios';
 //internal imports
 import PokemonCard from '../PokemonCard';
 import './styles.scss';
+import Search from '../Search';
 
 const api = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
 
@@ -39,6 +40,7 @@ function Home() {
 
 	return (
 		<div className="main">
+			<Search />
 			<div className="pokemonList">
 				{pokemonList.map((pokemon: any) => (
 					<div key={pokemon.id}>

@@ -11,7 +11,6 @@ const App = () => {
 				<Navbar />
 				<Routes>
 					<Route path="/" Component={Home} />
-					<Route path="/about" Component={About} />
 				</Routes>
 			</QueryClientProvider>
 		</BrowserRouter>

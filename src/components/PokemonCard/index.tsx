@@ -42,7 +42,7 @@ const PokemonCard = ({ pokemon, isLoading }: any) => {
 								const statValue = poke.base_stat;
 								return (
 									<h3 key={id}>
-										{statName}:{statValue}
+										{statName}:&nbsp;{statValue}
 									</h3>
 								);
 							})}
