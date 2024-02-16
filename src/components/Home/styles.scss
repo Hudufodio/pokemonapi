@@ -2,6 +2,24 @@
 	display: flex;
 	justify-content: center;
 
+	.searchContainer {
+		position: absolute;
+		width: 100%;
+		z-index: 1000;
+		top: 35px;
+
+		.searchInput {
+			width: 700px;
+			height: 25px;
+			padding: 8px;
+			margin: auto;
+			border-radius: 20px;
+			border: 2px solid #4a8db7;
+			display: flex;
+			background-color: #8080802c;
+		}
+	}
+
 	.pokemonList {
 		margin-top: 100px;
 		display: grid;

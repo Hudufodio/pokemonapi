@@ -4,7 +4,7 @@ import axios from 'axios';
 //internal imports
 import PokemonCard from '../PokemonCard';
 import './styles.scss';
-import Search from '../Search';
+// import Search from '../Search';
 
 const api = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
 
@@ -16,6 +16,7 @@ interface HomeProps {
 function Home({}: HomeProps) {
 	const [pokemonList, setPokemonList] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [searchText, setSearchText] = useState('');
 
 	const getPokemon = async (results: any) => {
 		results.map(async (item: any) => {
@@ -43,11 +44,32 @@ function Home({}: HomeProps) {
 		PokemonData();
 	}, []);
 
+	const handleSearch = (e: any) => {
+		setSearchText(e.target.value);
+	};
+
+	const searchFilter = (pokemonList: any) => {
+		return pokemonList.filter((pokemon: any) =>
+			pokemon.name.toLowerCase().includes(searchText.toLocaleLowerCase())
+		);
+	};
+
+	const filteredPokemonList = searchFilter(pokemonList);
+
 	return (
 		<div className="main">
-			<Search search={''} />
+			<div className="searchContainer">
+				<input
+					type="text"
+					placeholder="search your favorite character Pikachu, Mew etc"
+					value={searchText}
+					onChange={handleSearch}
+					className="searchInput"
+					id="pokemonName"
+				/>
+			</div>
 			<div className="pokemonList">
-				{pokemonList.map((pokemon: any) => (
+				{filteredPokemonList.map((pokemon: any) => (
 					<div key={pokemon.id}>
 						<PokemonCard pokemon={pokemon} isLoading={isLoading} />
 					</div>
