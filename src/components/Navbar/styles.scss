@@ -1,28 +1,7 @@
-nav {
+.home {
 	display: flex;
-	justify-content: space-between;
-	width: 100%;
 	position: fixed;
-	top: 0px;
-	z-index: 99;
-
-	ul {
-		display: flex;
-		list-style: none;
-		position: fixed;
-		right: 10px;
-		margin-top: 2px;
-
-		li {
-			padding: 10px;
-			font-size: 18px;
-			font-weight: 400;
-			font-family: 'Montserrat', sans-serif;
-
-			a {
-				text-decoration: none;
-				color: #000;
-			}
-		}
-	}
+	right: 30px;
+	bottom: 40px;
+	background-color: #4a8db7;
 }

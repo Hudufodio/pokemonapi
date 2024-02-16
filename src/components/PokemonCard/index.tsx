@@ -4,7 +4,13 @@ import { useState } from 'react';
 
 //internal imports
 import './styles.scss';
-const PokemonCard = ({ pokemon, isLoading }: any) => {
+
+interface PokemonCardProps {
+	pokemon: any;
+	isLoading: boolean;
+}
+
+const PokemonCard = ({ pokemon, isLoading }: PokemonCardProps) => {
 	const [isFlipped, setIsFlipped] = useState('');
 
 	const onMouseEnter = () => {
@@ -42,7 +48,7 @@ const PokemonCard = ({ pokemon, isLoading }: any) => {
 								const statValue = poke.base_stat;
 								return (
 									<h3 key={id}>
-										{statName}:{statValue}
+										{statName}:&nbsp;{statValue}
 									</h3>
 								);
 							})}
