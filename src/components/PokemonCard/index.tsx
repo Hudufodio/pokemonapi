@@ -1,46 +1,22 @@
 import ReactCardFlip from 'react-card-flip';
-import { useEffect, useState } from 'react';
-import { CircularProgress } from '@mui/material';
+import { useState } from 'react';
+// import { CircularProgress } from '@mui/material';
 
 //internal imports
 import pikachu from '../images/pikachu.png';
 import './styles.scss';
-import axios from 'axios';
 
-const api = 'https://pokeapi.co/api/v2/pokemon/';
-
-const PokemonCard = ({ pokemon }: any) => {
+const PokemonCard = ({ pokemon, isLoading }: any) => {
 	const [isFlipped, setIsFlipped] = useState('');
-	const [pokeDex, setPokeDex] = useState([]);
-
-	useEffect(() => {
-		const getPokemon = async (name: any) => {
-			try {
-				const response = await axios.get(api + name);
-				setPokeDex(response.data);
-			} catch (error) {
-				console.error('Error message:', error);
-			}
-		};
-
-		getPokemon(name);
-	}, []);
-
-	// console.log(pokeDex);
+	// console.log(pokemon);
 
 	return (
 		<div className="cardContainer">
-			<ReactCardFlip isFlipped={isFlipped === 'card'} flipDirection="horizontal">
-				<div className="card" onMouseEnter={() => setIsFlipped('card')}>
-					{pokeDex && (
-						<>
-							<img src={pikachu} alt="" />
-						</>
-					)}
-
-					<h1>{pokemon.name}</h1>
+			<ReactCardFlip isFlipped={isFlipped === 'card1'} flipDirection="horizontal">
+				<div className="card" onMouseEnter={() => setIsFlipped('card1')}>
+					<img src={pokemon.sprites.other['official-artwork'].front_default} alt="" />
+					<h1>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
 				</div>
-
 				<div className="cardBack" onMouseLeave={() => setIsFlipped('')}>
 					<div className="abilities">
 						<div className="group">

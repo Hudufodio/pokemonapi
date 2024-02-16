@@ -1,7 +1,7 @@
 .cardContainer {
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
+	margin: auto;
 
 	.card {
 		display: flex;
@@ -16,8 +16,10 @@
 		box-sizing: border-box;
 
 		img {
-			width: 180px;
+			width: 100px;
+			height: 100px;
 			margin: auto;
+			padding: -8px;
 		}
 
 		h1 {
