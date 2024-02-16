@@ -9,7 +9,6 @@ const App = () => {
 		<BrowserRouter>
 			<QueryClientProvider client={queryClient}>
 				<Navbar />
-				<Search />
 				<Routes>
 					<Route path="/" Component={Home} />
 					<Route path="/about" Component={About} />
