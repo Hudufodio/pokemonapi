@@ -3,27 +3,31 @@ import { useState } from 'react';
 // import { CircularProgress } from '@mui/material';
 
 //internal imports
-import pikachu from '../images/pikachu.png';
 import './styles.scss';
 
 const PokemonCard = ({ pokemon, isLoading }: any) => {
 	const [isFlipped, setIsFlipped] = useState('');
-	// console.log(pokemon);
+
+	const onMouseEnter = () => {
+		setIsFlipped('card1');
+	};
+
+	const onMouseLeave = () => {
+		setIsFlipped('');
+	};
 
 	return (
 		<div className="cardContainer">
 			<ReactCardFlip isFlipped={isFlipped === 'card1'} flipDirection="horizontal">
-				<div className="card" onMouseEnter={() => setIsFlipped('card1')}>
+				<div className="card" onMouseEnter={onMouseEnter} key={pokemon.id}>
 					<img src={pokemon.sprites.other['official-artwork'].front_default} alt="" />
 					<h1>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
+					<h4>weight:&nbsp;{pokemon.weight}</h4>
 				</div>
-				<div className="cardBack" onMouseLeave={() => setIsFlipped('')}>
+				<div className="cardBack" onMouseLeave={onMouseLeave}>
 					<div className="abilities">
 						<div className="group">
-							<h2>Static</h2>
-						</div>
-						<div className="group">
-							<h2>Growth</h2>
+							<h2>static</h2>
 						</div>
 					</div>
 					<hr style={{ width: '100%', marginTop: -18 }} />

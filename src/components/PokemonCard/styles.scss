@@ -12,7 +12,7 @@
 		background-color: #4a8db7;
 		border-radius: 1rem;
 		box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-		padding: 0 1.5rem;
+		// padding: 0 1.5rem;
 		box-sizing: border-box;
 
 		img {
@@ -24,6 +24,12 @@
 
 		h1 {
 			font-size: 22px;
+			margin: 0;
+		}
+		h4 {
+			padding: 10px;
+			margin: 0;
+			font-size: 14px;
 		}
 	}
 
