@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
+//internal imports
 import './styles.scss';
 
 const Search = () => {
-	const [search, setSearch] = useState('');
+	const [searchText, setSearchText] = useState('');
 
 	const handleSearch = (e: any) => {
-		setSearch(e.target.value);
+		setSearchText(e.target.value);
 	};
 
 	return (
@@ -14,7 +15,7 @@ const Search = () => {
 			<input
 				type="text"
 				placeholder="search your favorite character Pikachu, Mew etc"
-				value={search}
+				value={searchText}
 				onChange={handleSearch}
 				className="searchInput"
 				autoFocus
