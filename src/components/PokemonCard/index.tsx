@@ -1,16 +1,14 @@
 import ReactCardFlip from 'react-card-flip';
 import { useState } from 'react';
-// import { CircularProgress } from '@mui/material';
 
 //internal imports
 import './styles.scss';
 
 interface PokemonCardProps {
 	pokemon: any;
-	isLoading: boolean;
 }
 
-const PokemonCard = ({ pokemon, isLoading }: PokemonCardProps) => {
+const PokemonCard = ({ pokemon }: PokemonCardProps) => {
 	const [isFlipped, setIsFlipped] = useState('');
 
 	const onMouseEnter = () => {

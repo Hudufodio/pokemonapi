@@ -1,7 +1,26 @@
 .home {
 	display: flex;
-	position: fixed;
-	right: 30px;
-	bottom: 40px;
-	background-color: #4a8db7;
+
+	.arrowUp {
+		position: fixed;
+		bottom: 40px;
+		right: 60px;
+		color: #000;
+		font-size: 40px;
+		background-color: transparent;
+		cursor: pointer;
+
+		&:hover {
+			transition: font-size 0.5s ease-out, color 0.5s;
+			font-size: 60px;
+			color: var(--secondary);
+		}
+	}
+
+	.darkMode {
+		position: fixed;
+		font-size: 30px;
+		top: 30px;
+		right: 60px;
+	}
 }

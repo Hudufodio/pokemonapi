@@ -1,3 +1,6 @@
+import { MdOutlineArrowCircleUp, MdLightbulb } from 'react-icons/md';
+
+//internal imports
 import './styles.scss';
 
 interface NavbarProps {
@@ -9,9 +12,10 @@ const Navbar = ({}: NavbarProps) => {
 		window.scrollTo(0, 0);
 	};
 	return (
-		<button className="home" onClick={handleClick}>
-			Home
-		</button>
+		<div className="home">
+			<MdLightbulb className="darkMode" />
+			<MdOutlineArrowCircleUp className="arrowUp" onClick={handleClick} />
+		</div>
 	);
 };
 

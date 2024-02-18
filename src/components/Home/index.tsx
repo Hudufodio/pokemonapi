@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { CircularProgress } from '@mui/material';
+import { FiSearch } from 'react-icons/fi';
 
 //internal imports
 import PokemonCard from '../PokemonCard';
 import './styles.scss';
-// import Search from '../Search';
 
 const api = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
 
@@ -61,19 +62,24 @@ function Home({}: HomeProps) {
 			<div className="searchContainer">
 				<input
 					type="text"
-					placeholder="search your favorite character Pikachu, Mew etc"
+					placeholder="Search your pokemon"
 					value={searchText}
 					onChange={handleSearch}
 					className="searchInput"
 					id="pokemonName"
 				/>
+				<FiSearch className="searchIcon" />
 			</div>
 			<div className="pokemonList">
-				{filteredPokemonList.map((pokemon: any) => (
-					<div key={pokemon.id}>
-						<PokemonCard pokemon={pokemon} isLoading={isLoading} />
-					</div>
-				))}
+				{isLoading ? (
+					<CircularProgress />
+				) : (
+					filteredPokemonList.map((pokemon: any) => (
+						<div key={pokemon.id}>
+							<PokemonCard pokemon={pokemon} />
+						</div>
+					))
+				)}
 			</div>
 		</div>
 	);
