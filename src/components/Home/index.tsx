@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@mui/material';
+import { FiSearch } from 'react-icons/fi';
 
 //internal imports
 import PokemonCard from '../PokemonCard';
@@ -61,12 +62,13 @@ function Home({}: HomeProps) {
 			<div className="searchContainer">
 				<input
 					type="text"
-					placeholder="search your favorite character Pikachu, Mew etc"
+					placeholder="Search your pokemon"
 					value={searchText}
 					onChange={handleSearch}
 					className="searchInput"
 					id="pokemonName"
 				/>
+				<FiSearch className="searchIcon" />
 			</div>
 			<div className="pokemonList">
 				{isLoading ? (
